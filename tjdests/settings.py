@@ -57,7 +57,7 @@ INSTALLED_APPS = (
 
 if PRODUCTION:
     DEBUG = False
-    ALLOWED_HOSTS = ["*.*.*.*", "127.0.0.1"]
+    ALLOWED_HOSTS = ["*.*.*.*", "127.0.0.1", "tjhsst2017.com", "www.tjhsst2017.com"]
     INSTALLED_APPS += ("django.contrib.sites",)
 
 MIDDLEWARE_CLASSES = (
