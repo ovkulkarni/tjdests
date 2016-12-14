@@ -96,7 +96,7 @@ class UserForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(UserForm, self).__init__(*args, **kwargs)
         self.fields["username"].label = "TJ Username"
-        self.fields["username"].help_text = "e.x. 2016jwoglom"
+        self.fields["username"].help_text = "e.x. 2017sdamashe"
         self.fields["password1"].help_text = "Do NOT use your TJHSST password."
 
     def save(self, commit=True):
