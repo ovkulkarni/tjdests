@@ -40,7 +40,7 @@ class CollegeAppForm(forms.ModelForm):
 
 class APExamForm(forms.ModelForm):
     score = forms.IntegerField(max_value=5, min_value=1, widget=forms.NumberInput(attrs={"max": 5, "min": 1, "placeholder": 1}))
-    year = forms.IntegerField(max_value=2016, min_value=2013, widget=forms.NumberInput(attrs={"max": 2016, "min": 2013, "placeholder": 2015}))
+    year = forms.IntegerField(max_value=2017, min_value=2014, widget=forms.NumberInput(attrs={"max": 2017, "min": 2014, "placeholder": 2015}))
     class Meta:
         model = APExam
         fields = ["name",
@@ -50,7 +50,7 @@ class APExamForm(forms.ModelForm):
 
 class SAT2Form(forms.ModelForm):
     score = forms.IntegerField(max_value=800, min_value=200, widget=forms.NumberInput(attrs={"max": 800, "min": 1, "placeholder": 200}))
-    year = forms.IntegerField(max_value=2016, min_value=2013, widget=forms.NumberInput(attrs={"max": 2016, "min": 2013, "placeholder": 2015}))
+    year = forms.IntegerField(max_value=2017, min_value=2014, widget=forms.NumberInput(attrs={"max": 2017, "min": 2014, "placeholder": 2015}))
 
     class Meta:
         model = SAT2

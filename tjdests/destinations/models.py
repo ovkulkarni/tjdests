@@ -210,7 +210,7 @@ class User(AbstractBaseUser):
 
     @property
     def is_senior(self):
-        return self.username.startswith('2016')
+        return self.username.startswith('2017')
     
     
 

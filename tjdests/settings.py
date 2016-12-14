@@ -37,7 +37,7 @@ else:
 
 AUTH_USER_MODEL = "destinations.User"
 
-EMAIL_FROM = "noreply@tjhsst2016.com"
+EMAIL_FROM = "noreply@tjhsst2017.com"
 
 # Application definition
 
