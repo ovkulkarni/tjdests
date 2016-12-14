@@ -18,7 +18,7 @@
     </div>
     {% endif %}
 
-    {% if not senior %}
+    {% if senior %}
     {% if senior.collegeapp_set.count == 0 %}
         <b>Start adding schools:</b>
     {% else %}
@@ -45,12 +45,11 @@
         Update or add more SAT Subject Tests:
     {% endif %}
     <br />
+    
+    <a href="{% url 'update_sat2s' %}" class="button">Update/Add SAT Subject Tests</a>
     {% else %}
     <b>Please add required personal info below before adding schools or exams.</b>
     {% endif %}
-
-    <a href="{% url 'update_sat2s' %}" class="button">Update/Add SAT Subject Tests</a>
-    
 
     <h3>Update Personal Info:</h3>
 
