@@ -1,10 +1,10 @@
 Hello {{ name }},
 
-Someone has signed up for TJ Destinations (http://tjhsst2017.com) using this email address. If this is you, please verify your account by clicking the link below:
+Someone has signed up for TJ Destinations (https://tjhsst2017.com) using this email address. If this is you, please verify your account by clicking the link below:
 
 {{ verify_url }}
 
 If this isn't you, just ignore this email.
 
 -- TJ Destinations
-http://tjhsst2017.com
+https://tjhsst2017.com
