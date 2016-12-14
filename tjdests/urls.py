@@ -47,7 +47,7 @@ urlpatterns = [
     url(r'^colleges$', views.colleges_view, name='colleges'),
     url(r'^destinations$', views.destinations_view, name='destinations'),
     url(r'^student/(?P<student_id>\d+)?$', views.student_view, name='student'),
-    url(r'^college/(?P<college_ceeb>\d+)?$', views.college_view, name='college'),
+    url(r'^college/(?P<college_ceeb>[\w\d]+)?$', views.college_view, name='college'),
 
 
     url(r'^admin/', include(admin.site.urls)),

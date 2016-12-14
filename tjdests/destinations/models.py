@@ -7,7 +7,7 @@ from django.db import models
 
 class College(models.Model):
     name = models.CharField(max_length=1000)
-    ceeb = models.IntegerField(unique=True)
+    ceeb = models.CharField(unique=True, max_length=7)
 
     def __unicode__(self):
         return "{}: {}".format(self.ceeb, self.name)
