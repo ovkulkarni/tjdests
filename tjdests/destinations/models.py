@@ -74,9 +74,9 @@ class CollegeApp(models.Model):
     def result_name(self):
         results = {i[0]: i[1] for i in self.RESULTS}
         return results[self.result] if self.result in results else ""
-    
-    
-    
+
+
+
 
     def __unicode__(self):
         return "{}".format(self.college)
@@ -210,9 +210,9 @@ class User(AbstractBaseUser):
 
     @property
     def is_senior(self):
-        return self.username.startswith('2017')
-    
-    
+        return self.username.startswith('2018')
+
+
 
     def __unicode__(self):
         return "{} {} ({})".format(self.first_name, self.last_name, self.username)
