@@ -1,5 +1,9 @@
 Django==1.8.6
+django-appconf==1.0.2
 django-extensions==1.5.9
-django-simple-captcha==0.4.6
-Pillow==3.0.0
 django-maintenancemode==0.11.1
+django-simple-captcha==0.4.6
+gunicorn==19.7.1
+IPy==0.83
+Pillow==3.0.0
+six==1.11.0
