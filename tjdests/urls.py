@@ -19,7 +19,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from destinations import views
+from .destinations import views
 
 urlpatterns = [
     url(r'^$', views.index_view, name='index'),
