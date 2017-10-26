@@ -37,7 +37,7 @@ else:
 
 AUTH_USER_MODEL = "destinations.User"
 
-EMAIL_FROM = "noreply@tjhsst2017.com"
+EMAIL_FROM = "noreply@tjhsst2018.com"
 
 # Application definition
 
@@ -57,7 +57,7 @@ INSTALLED_APPS = (
 
 if PRODUCTION:
     DEBUG = False
-    ALLOWED_HOSTS = ["*.*.*.*", "127.0.0.1", "tjhsst2017.com", "www.tjhsst2017.com"]
+    ALLOWED_HOSTS = ["*.*.*.*", "127.0.0.1", "tjhsst2018.com", "www.tjhsst2017.com"]
 #    INSTALLED_APPS += ("django.contrib.sites",)
 
 MIDDLEWARE_CLASSES = (
@@ -172,7 +172,7 @@ LOGGING = {
             "filters": ["require_debug_false"],
             "class": "logging.FileHandler",
             "formatter": "access",
-            "filename": ("/var/tjdests/app_access.log" if PRODUCTION else "./app_access.log"),
+            "filename": ("./logs/app_access.log" if PRODUCTION else "./app_access.log"),
             "delay": True
         },
         "auth_log": {
@@ -180,7 +180,7 @@ LOGGING = {
             "filters": ["require_debug_false"],
             "class": "logging.FileHandler",
             "formatter": "access",
-            "filename": ("/var/tjdests/app_auth.log" if PRODUCTION else "./app_auth.log"),
+            "filename": ("./logs/app_auth.log" if PRODUCTION else "./app_auth.log"),
             "delay": True
         },
         "error_log": {
@@ -188,7 +188,7 @@ LOGGING = {
             "filters": ["require_debug_false"],
             "class": "logging.FileHandler",
             "delay": True,
-            "filename": ("/var/tjdests/app_error.log" if PRODUCTION else "./app_error.log")
+            "filename": ("./logs/app_error.log" if PRODUCTION else "./app_error.log")
         },
     },
     "loggers": {
