@@ -30,7 +30,8 @@ DEBUG = os.getenv("DEBUG", "") == "TRUE"
 PRODUCTION = os.getenv("PRODUCTION", "") == "TRUE"
 
 if not DEBUG:
-    ALLOWED_HOSTS = ("127.0.0.1",)
+    # ALLOWED_HOSTS = ("127.0.0.1",)
+    ALLOWED_HOSTS = []
 else:
     ALLOWED_HOSTS = []
 
@@ -57,8 +58,9 @@ INSTALLED_APPS = (
 
 if PRODUCTION:
     DEBUG = False
-    ALLOWED_HOSTS = ["*.*.*.*", "127.0.0.1", "tjhsst2018.com", "www.tjhsst2018.com"]
-#    INSTALLED_APPS += ("django.contrib.sites",)
+    # ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ["*.*.*.*", "127.0.0.1", ".tjhsst2018.com"]
+    INSTALLED_APPS += ("django.contrib.sites",)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -120,6 +122,15 @@ USE_L10N = True
 USE_TZ = True
 
 
+# CSRF
+CSRF_TRUSTED_ORIGINS = ['tjhsst2018.com', 'www.tjhsst2018.com']
+CSRF_COOKIE_DOMAIN = 'tjhsst2018.com'
+CORS_ORIGIN_WHITELIST = (
+    'www.tjhsst2018.com',
+    'tjhsst2018.com',
+)
+USE_X_FORWARDED_HOST = True
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
@@ -129,10 +140,11 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, "static/"),
 )
 
-LOG_LEVEL = "DEBUG" if not PRODUCTION else "INFO"
+LOG_LEVEL = "DEBUG" if not PRODUCTION else "DEBUG"
 _log_levels = ("DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL")
 if os.getenv("LOG_LEVEL", None) in _log_levels:
     LOG_LEVEL = os.environ["LOG_LEVEL"]
+
 
 LOGGING = {
     "version": 1,

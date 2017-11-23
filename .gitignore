@@ -2,3 +2,6 @@ db.sqlite3
 env/
 *.pyc
 *settings_secret.py*
+
+logs/
+*.log
