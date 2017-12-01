@@ -12,6 +12,9 @@ class College(models.Model):
     def __unicode__(self):
         return "{}: {}".format(self.ceeb, self.name)
 
+    def __str__(self):
+        return "{}: {}".format(self.ceeb, self.name)
+
     @property
     def applied_set(self):
         return self.collegeapp_set.all()
