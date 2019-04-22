@@ -38,7 +38,7 @@ else:
 
 AUTH_USER_MODEL = "destinations.User"
 
-EMAIL_FROM = "noreply@tjhsst2018.com"
+EMAIL_FROM = "noreply@tjhsst2019.com"
 
 # Application definition
 
@@ -59,10 +59,12 @@ INSTALLED_APPS = (
 if PRODUCTION:
     DEBUG = False
     # ALLOWED_HOSTS = []
-    ALLOWED_HOSTS = ["*.*.*.*", "127.0.0.1", ".tjhsst2018.com"]
+    ALLOWED_HOSTS = ["127.0.0.1", ".tjhsst2019.com", "tjhsst2019.com"]
     INSTALLED_APPS += ("django.contrib.sites",)
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -70,7 +72,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
     'tjdests.middleware.access_log.AccessLogMiddleWare',
 )
 
@@ -123,11 +124,11 @@ USE_TZ = True
 
 
 # CSRF
-CSRF_TRUSTED_ORIGINS = ['tjhsst2018.com', 'www.tjhsst2018.com']
-CSRF_COOKIE_DOMAIN = 'tjhsst2018.com'
+CSRF_TRUSTED_ORIGINS = ['tjhsst2019.com', 'www.tjhsst2019.com']
+CSRF_COOKIE_DOMAIN = 'tjhsst2019.com'
 CORS_ORIGIN_WHITELIST = (
-    'www.tjhsst2018.com',
-    'tjhsst2018.com',
+    'www.tjhsst2019.com',
+    'tjhsst2019.com',
 )
 USE_X_FORWARDED_HOST = True
 
@@ -135,6 +136,8 @@ USE_X_FORWARDED_HOST = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(PROJECT_DIR, "collected_static")
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, "static/"),

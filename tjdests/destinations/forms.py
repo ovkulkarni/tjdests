@@ -40,7 +40,7 @@ class CollegeAppForm(forms.ModelForm):
 
 class APExamForm(forms.ModelForm):
     score = forms.IntegerField(max_value=5, min_value=1, widget=forms.NumberInput(attrs={"max": 5, "min": 1, "placeholder": 1}))
-    year = forms.IntegerField(max_value=2018, min_value=2011, widget=forms.NumberInput(attrs={"max": 2018, "min": 2011, "placeholder": 2017}))
+    year = forms.IntegerField(max_value=2019, min_value=2011, widget=forms.NumberInput(attrs={"max": 2019, "min": 2011, "placeholder": 2017}))
     class Meta:
         model = APExam
         fields = ["name",
@@ -50,7 +50,7 @@ class APExamForm(forms.ModelForm):
 
 class SAT2Form(forms.ModelForm):
     score = forms.IntegerField(max_value=800, min_value=200, widget=forms.NumberInput(attrs={"max": 800, "min": 1, "placeholder": 200}))
-    year = forms.IntegerField(max_value=2018, min_value=2010, widget=forms.NumberInput(attrs={"max": 2018, "min": 2010, "placeholder": 2016}))
+    year = forms.IntegerField(max_value=2019, min_value=2010, widget=forms.NumberInput(attrs={"max": 2019, "min": 2010, "placeholder": 2016}))
 
     class Meta:
         model = SAT2
@@ -96,7 +96,7 @@ class UserForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(UserForm, self).__init__(*args, **kwargs)
         self.fields["username"].label = "TJ Username"
-        self.fields["username"].help_text = "e.x. 2018nzhou"
+        self.fields["username"].help_text = "e.x. 2019okulkarn"
         self.fields["password1"].help_text = "Do NOT use your TJHSST password."
 
     def save(self, commit=True):
